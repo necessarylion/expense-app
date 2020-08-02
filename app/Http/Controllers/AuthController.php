@@ -36,8 +36,6 @@ class AuthController extends Controller
                 $social = Socialite::driver($request->type)->userFromToken($token);
             }
 
-            return ['data' => $social];
-
             if($social) {
 
                 $name       = $this->_getName($social, $request->type);
